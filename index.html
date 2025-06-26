@@ -1,9 +1,19 @@
-<!-- index.html -->
+<!DOCTYPE html>
 <html>
-  <head><title>Test Payment</title></head>
-  <body style="text-align:center;padding:40px;">
-    <h2>Simulated SabPaisa Payment Page</h2>
-    <button onclick="window.location.href='https://yourapp.com/paymentSuccess'">Simulate Success</button><br><br>
-    <button onclick="window.location.href='https://yourapp.com/paymentFailure'">Simulate Failure</button>
-  </body>
+<head>
+  <title>Redirecting to SabPaisa...</title>
+</head>
+<body onload="document.forms[0].submit()">
+  <form method="POST" action="https://secure.sabpaisa.in/SabPaisa/sabPaisaInit">
+    <input type="hidden" name="clientCode" value="TM001" />
+    <input type="hidden" name="userName" value="TestUser" />
+    <input type="hidden" name="emailId" value="test@example.com" />
+    <input type="hidden" name="mobileNo" value="9999999999" />
+    <input type="hidden" name="amount" value="1.00" />
+    <input type="hidden" name="txnId" value="TXN123456" />
+    <input type="hidden" name="remarks" value="TestingUI" />
+    <input type="hidden" name="mode" value="ONLINE" />
+    <p>Redirecting to payment page...</p>
+  </form>
+</body>
 </html>
